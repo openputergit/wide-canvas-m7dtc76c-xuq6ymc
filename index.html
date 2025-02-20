@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiran Kshirsagar - Flutter Developer</title>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #3B82F6, #60A5FA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .reveal {
+            opacity: 0;
+            transition: opacity 0.5s ease-in;
+        }
+        .reveal.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/80 backdrop-blur-sm z-50 shadow-sm">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-xl font-bold gradient-text">KK</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#about" class="hover:text-blue-500 transition">About</a>
+                    <a href="#projects" class="hover:text-blue-500 transition">Projects</a>
+                    <a href="#experience" class="hover:text-blue-500 transition">Experience</a>
+                    <a href="#blog" class="hover:text-blue-500 transition">Blog</a>
+                    <a href="#contact" class="hover:text-blue-500 transition">Contact</a>
+                </div>
+                <button class="md:hidden" onclick="toggleMenu()">
+                    <i class="bi bi-list text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white w-full">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#about" class="hover:text-blue-500 transition">About</a>
+                <a href="#projects" class="hover:text-blue-500 transition">Projects</a>
+                <a href="#experience" class="hover:text-blue-500 transition">Experience</a>
+                <a href="#blog" class="hover:text-blue-500 transition">Blog</a>
+                <a href="#contact" class="hover:text-blue-500 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 md:pt-32 pb-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                        Hi, I'm <span class="gradient-text">Kiran Kshirsagar</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-6">
+                        Flutter Developer crafting beautiful mobile experiences
+                    </p>
+                    <a href="#contact" class="bg-blue-500 text-white px-8 py-3 rounded-full hover:bg-blue-600 transition">
+                        Get in touch
+                    </a>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0">
+                    <img src="https://images.unsplash.com/photo-1517853793507-5042bc4b8e84?q=80" 
+                         alt="Portfolio Hero" 
+                         class="rounded-lg shadow-lg max-w-md mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-gray-600 leading-relaxed">
+                        I'm a passionate Flutter developer with 5+ years of experience in mobile app development. 
+                        I specialize in creating smooth, intuitive user experiences and scalable applications.
+                    </p>
+                    <div class="mt-6">
+                        <h3 class="font-semibold mb-3">Technical Skills:</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full">Flutter</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full">Dart</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full">Firebase</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full">REST APIs</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full">Git</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center items-center">
+                    <img src="https://images.unsplash.com/photo-1555952517-2e8e729e0b44?q=80" 
+                         alt="About section image" 
+                         class="rounded-lg shadow-lg max-w-sm">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project Card 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden reveal">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80" 
+                         alt="Project 1" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-xl mb-2">Fitness Tracking App</h3>
+                        <p class="text-gray-600 mb-4">A comprehensive fitness tracking application built with Flutter.</p>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-blue-500 hover:text-blue-600">
+                                <i class="bi bi-github text-xl"></i>
+                            </a>
+                            <a href="#" class="text-blue-500 hover:text-blue-600">
+                                Live Demo →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden reveal">
+                    <img src="https://images.unsplash.com/photo-1576153192396-180ecef2a715?q=80" 
+                         alt="Project 2" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-xl mb-2">E-Commerce Platform</h3>
+                        <p class="text-gray-600 mb-4">A feature-rich e-commerce mobile application.</p>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-blue-500 hover:text-blue-600">
+                                <i class="bi bi-github text-xl"></i>
+                            </a>
+                            <a href="#" class="text-blue-500 hover:text-blue-600">
+                                Live Demo →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden reveal">
+                    <img src="https://images.unsplash.com/photo-1512756290469-ec264b7fbf87?q=80" 
+                         alt="Project 3" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-xl mb-2">Chat Application</h3>
+                        <p class="text-gray-600 mb-4">Real-time messaging app with Firebase integration.</p>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-blue-500 hover:text-blue-600">
+                                <i class="bi bi-github text-xl"></i>
+                            </a>
+                            <a href="#" class="text-blue-500 hover:text-blue-600">
+                                Live Demo →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Experience</h2>
+            <div class="max-w-3xl mx-auto">
+                <!-- Experience Item 1 -->
+                <div class="mb-8 reveal">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                        <h3 class="font-bold text-xl">Senior Flutter Developer</h3>
+                        <span class="text-gray-500">2020 - Present</span>
+                    </div>
+                    <h4 class="text-blue-500 mb-2">Tech Solutions Inc.</h4>
+                    <p class="text-gray-600">
+                        Led a team of developers in building complex mobile applications.
+                        Implemented clean architecture and best practices.
+                    </p>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="mb-8 reveal">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                        <h3 class="font-bold text-xl">Flutter Developer</h3>
+                        <span class="text-gray-500">2018 - 2020</span>
+                    </div>
+                    <h4 class="text-blue-500 mb-2">Mobile Apps Co.</h4>
+                    <p class="text-gray-600">
+                        Developed and maintained multiple Flutter applications.
+                        Collaborated with designers and backend developers.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Blog</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Blog Post 1 -->
+                <article class="bg-white rounded-lg shadow-md overflow-hidden reveal">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80" 
+                         alt="Blog post 1" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-xl mb-2">Flutter State Management</h3>
+                        <p class="text-gray-600 mb-4">A comprehensive guide to state management in Flutter...</p>
+                        <a href="#" class="text-blue-500 hover:text-blue-600">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="bg-white rounded-lg shadow-md overflow-hidden reveal">
+                    <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80" 
+                         alt="Blog post 2" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-xl mb-2">Building Custom Widgets</h3>
+                        <p class="text-gray-600 mb-4">Learn how to create reusable custom widgets in Flutter...</p>
+                        <a href="#" class="text-blue-500 hover:text-blue-600">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="bg-white rounded-lg shadow-md overflow-hidden reveal">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80" 
+                         alt="Blog post 3" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-xl mb-2">Firebase Integration</h3>
+                        <p class="text-gray-600 mb-4">A step-by-step guide to integrating Firebase...</p>
+                        <a href="#" class="text-blue-500 hover:text-blue-600">Read More →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Get in Touch</h2>
+            <div class="max-w-xl mx-auto">
+                <form id="contactForm" class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-gray-700 mb-2">Name</label>
+                        <input type="text" id="name" name="name" required
+                               class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 mb-2">Email</label>
+                        <input type="email" id="email" name="email" required
+                               class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-700 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="4" required
+                                  class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
+                    </div>
+                    <button type="submit" 
+                            class="w-full bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition">
+                        Send Message
+                    </button>
+                </form>
+                <div class="flex justify-center space-x-6 mt-8">
+                    <a href="#" class="text-gray-600 hover:text-blue-500 text-2xl">
+                        <i class="bi bi-github"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-blue-500 text-2xl">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-blue-500 text-2xl">
+                        <i class="bi bi-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2023 Kiran Kshirsagar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Scroll reveal animation
+        ScrollReveal().reveal('.reveal', {
+            delay: 200,
+            distance: '20px',
+            origin: 'bottom',
+            duration: 1000,
+            easing: 'ease-in-out',
+            interval: 100
+        });
+
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            console.log('Form submitted:', data);
+            // Here you would typically send the data to a server
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
